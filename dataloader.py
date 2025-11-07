@@ -166,7 +166,7 @@ def NCA_trainloader(args):
         ]
     elif args.condition == 'CY25-05_1':
         train_files = [
-            'CY25-05_1-#2.csv', 'CY25-05_1-#3.csv', 'CY25-05_1-#4.csv','CY25-05_1-#18.csv',
+            'CY25-05_1-#2.csv', 'CY25-05_1-#3.csv', 'CY25-05_1-#4.csv',
             'CY25-05_1-#5.csv', 'CY25-05_1-#6.csv', 'CY25-05_1-#7.csv', 'CY25-05_1-#8.csv',
             'CY25-05_1-#9.csv', 'CY25-05_1-#10.csv', 'CY25-05_1-#11.csv', 'CY25-05_1-#13.csv'
         ]
@@ -309,28 +309,12 @@ def NCM_trainloader(args):
     test_samples = []
     test_outputs = []
 
-    if args.condition == 'CY25-05_1':
-        train_files = [
-            'CY25-05_1-#1.csv', 'CY25-05_1-#2.csv', 'CY25-05_1-#3.csv', 'CY25-05_1-#4.csv',
-            'CY25-05_1-#5.csv', 'CY25-05_1-#6.csv', 'CY25-05_1-#7.csv', 'CY25-05_1-#8.csv',
-            'CY25-05_1-#9.csv', 'CY25-05_1-#10.csv', 'CY25-05_1-#11.csv', 'CY25-05_1-#12.csv',
-            'CY25-05_1-#8.csv'
-        ]
-        val_files = [
-            'CY25-05_1-#5.csv','CY25-05_1-#17.csv', 'CY25-05_1-#15.csv', 'CY25-05_1-#16.csv'
-        ]
-        test_files = [
-            'CY25-05_1-#13.csv', 'CY25-05_1-#19.csv', 'CY25-05_1-#20.csv', 'CY25-05_1-#21.csv',
-            'CY25-05_1-#22.csv', 'CY25-05_1-#23.csv'
-        ]
-
-    elif args.condition == 'CY45-05_1':
+    if args.condition == 'CY45-05_1':
         train_files = [
             'CY45-05_1-#1.csv', 'CY45-05_1-#2.csv', 'CY45-05_1-#3.csv', 'CY45-05_1-#4.csv',
             'CY45-05_1-#5.csv', 'CY45-05_1-#6.csv', 'CY45-05_1-#7.csv', 'CY45-05_1-#8.csv',
             'CY45-05_1-#9.csv', 'CY45-05_1-#10.csv', 'CY45-05_1-#11.csv', 'CY45-05_1-#12.csv',
-            'CY45-05_1-#13.csv', 'CY45-05_1-#14.csv', 'CY45-05_1-#15.csv', 'CY45-05_1-#16.csv',
-
+            'CY45-05_1-#13.csv', 'CY45-05_1-#14.csv', 'CY45-05_1-#15.csv', 'CY45-05_1-#16.csv'
         ]
         val_files = [
             'CY45-05_1-#28.csv','CY45-05_1-#17.csv'
@@ -339,7 +323,20 @@ def NCM_trainloader(args):
             'CY45-05_1-#24.csv', 'CY45-05_1-#26.csv', 'CY45-05_1-#27.csv', 'CY45-05_1-#22.csv',
             'CY45-05_1-#23.csv'
         ]
-
+    elif args.condition == 'CY25-05_1':
+        train_files = [
+            'CY25-05_1-#1.csv', 'CY25-05_1-#2.csv', 'CY25-05_1-#3.csv', 'CY25-05_1-#4.csv',
+            'CY25-05_1-#6.csv', 'CY25-05_1-#7.csv', 'CY25-05_1-#8.csv',
+            'CY25-05_1-#9.csv', 'CY25-05_1-#10.csv', 'CY25-05_1-#11.csv', 'CY25-05_1-#12.csv',
+            'CY25-05_1-#13.csv', 'CY25-05_1-#15.csv', 'CY25-05_1-#16.csv'
+        ]
+        val_files = [
+            'CY25-05_1-#5.csv','CY25-05_1-#17.csv'
+        ]
+        test_files = [
+            'CY25-05_1-#18.csv', 'CY25-05_1-#19.csv', 'CY25-05_1-#20.csv', 'CY25-05_1-#21.csv',
+            'CY25-05_1-#22.csv', 'CY25-05_1-#23.csv'
+        ]
     elif args.condition == 'CY35-05_1':
         train_files = [
             'CY35-05_1-#1.csv'
@@ -480,11 +477,11 @@ def NCMNCA_trainloader(args):
         test_files = [
             'CY25-05_4-#3.csv'
         ]
+
     else:
         raise ValueError(f"Unsupported condition: {args.condition}")
     input_folders = [
         'dataset/NCMNCA/V3.6-3.7/',
-
     ]
 
     if hasattr(args, 'dataaccess'):
